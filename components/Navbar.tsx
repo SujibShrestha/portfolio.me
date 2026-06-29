@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const NAV_LINKS = [
   { href: "#about", label: "About" },
@@ -24,17 +25,17 @@ const Navbar = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? "bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/[0.06]"
-          : "bg-transparent"
+        ? "bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/[0.06]"
+        : "bg-transparent"
         }`}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 lg:px-8">
         {/* Logo */}
         <Link
           href="/"
-          className="font-mono text-sm font-semibold text-white tracking-wide hover:text-[#4ade80] transition-colors duration-200"
+          className="flex items-center gap-4"
         >
-          Sujib Shrestha
+          <Image src="/assets/favicon.png" alt="Logo" width={40} height={30} /> <p className="font-mono text-sm font-semibold text-white tracking-wide hover:text-[#4ade80] transition-colors duration-200">Sujib</p>
         </Link>
 
         {/* Desktop nav */}

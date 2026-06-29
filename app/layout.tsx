@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CursorFollower from "@/components/CursorFollowing";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -40,10 +41,12 @@ export default function RootLayout({
       )}
     >
       <body className="min-h-full flex flex-col">
+        <CursorFollower />
         <Navbar />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
 }
+

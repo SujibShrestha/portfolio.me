@@ -79,7 +79,7 @@ const HeroSection = () => {
 
             {/* Description */}
             <p className="mt-6 text-base text-[#6b6b6b] leading-relaxed sm:text-lg">
-              Passionate about building scalable web applications and exploring new
+              GoTo Developer. Passionate about building scalable web applications and exploring new
               technologies. Crafting clean, efficient solutions for complex digital
               problems.
             </p>
