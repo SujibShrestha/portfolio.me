@@ -23,11 +23,10 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? "bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/[0.06]"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 lg:px-8">
         {/* Logo */}
@@ -74,9 +73,8 @@ const Navbar = () => {
 
       {/* Mobile drawer */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${
-          mobileOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
-        } bg-[#0a0a0a]/95 backdrop-blur-md border-b border-white/[0.06]`}
+        className={`md:hidden overflow-hidden transition-all duration-300 ${mobileOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
+          } bg-[#0a0a0a]/95 backdrop-blur-md border-b border-white/[0.06]`}
       >
         <ul className="flex flex-col px-6 py-4 gap-4">
           {NAV_LINKS.map(({ href, label }) => (
