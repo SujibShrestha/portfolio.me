@@ -28,11 +28,14 @@ const SOCIALS = [
   { href: "https://twitter.com/sujibshrestha", icon: <XIcon />, label: "X / Twitter" },
 ];
 
+import CursorFollower from "@/components/CursorFollowing";
+
 const HeroSection = () => {
 
 
   return (
     <section className="relative flex min-h-screen items-center bg-[#0a0a0a] overflow-hidden">
+      <CursorFollower />
       {/* Subtle grid background */}
       <div
         aria-hidden
@@ -48,7 +51,7 @@ const HeroSection = () => {
       {/* Radial glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[700px] w-[700px] rounded-full"
+        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-175 w-175 rounded-full"
         style={{
           background: "radial-gradient(ellipse at center, rgba(74,222,128,0.1) 0%, transparent 65%)",
         }}
@@ -72,9 +75,9 @@ const HeroSection = () => {
             </h1>
 
             {/* Typing subtitle */}
-            <div className="mt-4 flex items-center gap-2 font-mono text-lg text-[#a1a1a1] sm:text-xl min-h-[1.75rem]">
+            <div className="mt-4 flex items-center gap-2 font-mono text-lg text-[#a1a1a1] sm:text-xl min-h-7">
               <span>Software Developer</span>
-              <span className="inline-block h-5 w-0.5 bg-[#4ade80] animate-pulse" />
+              <span className="inline-block h-5 w-0.5 bg-[#4ade80] animate-caret-blink" />
             </div>
 
             {/* Description */}
@@ -98,8 +101,7 @@ const HeroSection = () => {
               </Link>
 
               <a
-                href="/assets/sujib-shrestha-cv.pdf"
-                download
+                href="/assets/Sujib_Shrestha_Resume.pdf"
                 className="inline-flex items-center gap-2 rounded border border-white/10 bg-white/5 px-6 py-3 font-mono text-sm font-bold text-white uppercase tracking-wider transition-all duration-200 hover:bg-white/10 hover:border-white/20"
               >
                 Download CV
@@ -125,7 +127,7 @@ const HeroSection = () => {
           </div>
 
           {/* ── RIGHT: rotating earth video ── */}
-          <div className="hidden md:flex relative flex-shrink-0 items-center justify-center">
+          <div className="hidden md:flex relative shrink-0 items-center justify-center">
 
             <video
               className="relative h-72 w-72 rounded-full object-cover sm:h-80 sm:w-80 lg:h-96 lg:w-96"
