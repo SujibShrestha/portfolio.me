@@ -1,6 +1,6 @@
 "use client";
 
-import { MotionDiv } from "../MotionDiv";
+import { MotionDiv } from "./MotionDiv"; 
 import Image from "next/image";
 import {
     Card,
@@ -92,7 +92,7 @@ export default function Projects() {
                                         sizes="(max-width: 768px) 100vw, 50vw"
                                     />
                                     {/* Overlay gradient */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/80 via-transparent to-transparent" />
+                                    <div className="absolute inset-0 bg-linear-to-t from-[#111111]/80 via-transparent to-transparent" />
 
                                     {/* Project number badge */}
                                     <div className="absolute top-4 left-4">
