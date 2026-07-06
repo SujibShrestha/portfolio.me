@@ -17,9 +17,18 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sujib Shrestha — SWE",
-  description:
-    "Portfolio of Sujib Shrestha — passionate about building scalable web applications and exploring new technologies.",
+  title: "Sujib Shrestha | SWE",
+  description: "Portfolio of Sujib Shrestha, a Backend and Generative AI developer skilled in full-stack development, React, Node.js, and AI-powered applications.",
+  keywords: "Sujib Shrestha, Portfolio, Backend Developer, AI Developer, Full-Stack, React, Node.js, Generative AI, Projects, GitHub, Software Developer",
+  robots: "index, follow",
+  viewport: "width=device-width, initial-scale=1.0",
+  openGraph: {
+    title: "Sujib Shrestha | Backend & AI Developer Portfolio",
+    description: "Portfolio of Sujib Shrestha, showcasing full-stack and AI projects.",
+    type: "website",
+    url: "https://www.sujibshrestha.com.np/",
+    siteName: "Sujib Shrestha",
+  },
 };
 
 export default function RootLayout({
