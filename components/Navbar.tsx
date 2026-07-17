@@ -36,7 +36,7 @@ const Navbar = () => {
           href="/"
           className="flex items-center gap-4"
         >
-          <Image src="/assets/favicon.png" alt="Logo" width={40} height={30} /> <p className="font-mono text-sm font-semibold text-white tracking-wide hover:text-[#4ade80] transition-colors duration-200">Sujib</p>
+          <Image src="/assets/favicon.png" alt="Sujib Shrestha Logo" width={40} height={30} priority /> <p className="font-mono text-sm font-semibold text-white tracking-wide hover:text-[#4ade80] transition-colors duration-200">Sujib</p>
         </Link>
 
         {/* Desktop nav */}
@@ -67,6 +67,7 @@ const Navbar = () => {
             className="md:hidden text-white p-1"
             onClick={() => setMobileOpen((v) => !v)}
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
           >
             {mobileOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -75,6 +76,7 @@ const Navbar = () => {
 
       {/* Mobile drawer */}
       <div
+        aria-hidden={!mobileOpen}
         className={`md:hidden overflow-hidden transition-all duration-300 ${mobileOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
           } bg-[#0a0a0a]/95 backdrop-blur-md border-b border-white/6`}
       >

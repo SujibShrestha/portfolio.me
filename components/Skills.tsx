@@ -45,6 +45,7 @@ export default function Skills() {
     return (
         <section id="skills" className="py-20 z-50 bg-[#0a0a0a] text-white">
             <div className="container mx-auto px-6 md:px-12 max-w-6xl">
+                <h2 className="sr-only">Skills & Tech Stack</h2>
                 <MotionDiv
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

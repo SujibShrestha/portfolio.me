@@ -81,7 +81,7 @@ const HeroSection = () => {
             </div>
 
             {/* Description */}
-            <p className="mt-6 text-base text-[#6b6b6b] leading-relaxed sm:text-lg">
+            <p className="mt-6 text-base text-[#a1a1a1] leading-relaxed sm:text-lg">
               GoTo Developer. Passionate about building scalable web applications and exploring new
               technologies. Crafting clean, efficient solutions for complex digital
               problems.
@@ -135,6 +135,9 @@ const HeroSection = () => {
               loop
               muted
               playsInline
+              preload="metadata"
+              aria-label="3D model of rotating Earth animation representing global web connectivity"
+              title="Rotating Earth animation"
             >
               <source src="/assets/rotate_earth.mp4" type="video/mp4" />
             </video>

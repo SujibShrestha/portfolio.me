@@ -44,7 +44,7 @@ export default function Contact() {
                     className="flex items-center gap-6 mb-16"
                 >
                     <span className="text-gray-300 font-mono text-xs tracking-[0.2em] font-medium whitespace-nowrap">
-                        04 // GET IN TOUCH
+                        05 // GET IN TOUCH
                     </span>
                     <div className="flex-1 h-px bg-white/10" />
                 </MotionDiv>
@@ -79,7 +79,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <p className="font-mono text-xs text-[#00ea7b] uppercase tracking-wider mb-1">Email</p>
-                                    <a href="mailto:sujibshrestha.dev@gmail.com" className="text-gray-300 hover:text-[#00ea7b] transition-colors">
+                                    <a href="mailto:sujibshrestha78@gmail.com" className="text-gray-300 hover:text-[#00ea7b] transition-colors">
                                         sujibshrestha78@gmail.com
                                     </a>
                                 </div>

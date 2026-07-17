@@ -63,7 +63,7 @@ export default function About() {
                         <div className="relative aspect-square rounded-2xl border-2 border-[#00ea7b] shadow-[0_0_20px_rgba(0,234,123,0.15)] overflow-hidden">
                             <Image
                                 src="/assets/profile.png"
-                                alt="Profile"
+                                alt="Sujib Shrestha - Backend and Generative AI Developer"
                                 fill
                                 className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
                                 sizes="(max-width: 768px) 100vw, 400px"

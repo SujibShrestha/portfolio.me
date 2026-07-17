@@ -35,6 +35,7 @@ export default function Experience() {
     return (
         <section id="exp" className="py-20 z-50 bg-[#0a0a0a] text-white">
             <div className="container mx-auto px-6 md:px-12 max-w-6xl">
+                <h2 className="sr-only">Work Experience</h2>
                 {/* Section Header */}
                 <MotionDiv
                     initial={{ opacity: 0, y: 20 }}
