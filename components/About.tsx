@@ -65,7 +65,7 @@ export default function About() {
                                 src="/assets/profile.png"
                                 alt="Sujib Shrestha - Backend and Generative AI Developer"
                                 fill
-                                className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                                className="object-cover transition-all duration-500"
                                 sizes="(max-width: 768px) 100vw, 400px"
                             />
                         </div>

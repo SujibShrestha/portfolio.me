@@ -23,7 +23,7 @@ export default function Home() {
           "https://www.linkedin.com/in/sujib-shrestha-245868282/",
           "https://twitter.com/sujibshrestha"
         ],
-        "email": "sujibshrestha78@gmail.com",
+        "email": "sujeeb98@gmail.com",
         "gender": "http://schema.org/Male",
         "knowsAbout": [
           "Software Engineering",
@@ -96,15 +96,15 @@ export default function Home() {
       },
       {
         "@type": "SoftwareApplication",
-        "@id": "https://www.sujibshrestha.com.np/#popcornlist",
-        "name": "Popcorn List",
-        "applicationCategory": "MultimediaApplication",
+        "@id": "https://www.sujibshrestha.com.np/#tabletap",
+        "name": "TableTap",
+        "applicationCategory": "BusinessApplication",
         "operatingSystem": "All",
         "browserRequirements": "Requires JavaScript. Requires HTML5.",
-        "description": "A cinematic watchlist application (Popcorn List) that lets users discover, search, and manage movies with a sleek dashboard UI, integrated with TMDB API or custom database.",
+        "description": "QR-based restaurant ordering platform with real-time WebSocket order sync, role-based dashboards for waiters, kitchen, cashiers, and admins, with sales analytics.",
         "softwareVersion": "1.0.0",
-        "url": "https://movie-watchlist-py3q.vercel.app/",
-        "downloadUrl": "https://github.com/SujibShrestha/Movie-watchlist",
+        "url": "https://github.com/SujibShrestha/TableTap",
+        "downloadUrl": "https://github.com/SujibShrestha/TableTap",
         "author": {
           "@id": "https://www.sujibshrestha.com.np/#person"
         },

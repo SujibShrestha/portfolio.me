@@ -1,37 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sujib Shrestha
 
-## Getting Started
+**Full Stack(backend) & Generative AI Developer** | Kathmandu, Nepal (Remote)
 
-First, run the development server:
+I build backend systems and AI-powered applications. My focus is on scalable APIs, real-time systems, and LLM integration — the parts of the stack where reliability matters most.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## What I Work With
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Languages:** TypeScript, JavaScript, Python  
+**Backend:** Node.js, Express.js, Django  
+**Frontend:** Next.js, React.js, Tailwind CSS  
+**AI/ML:** LangChain, RAG pipelines, LLM , Vector DBs (Chroma, Pinecone)  
+**Databases:** PostgreSQL, MongoDB, Redis  
+**Infrastructure:** Docker, GitHub Actions, Vercel, Render  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Featured Projects
 
-To learn more about Next.js, take a look at the following resources:
+### [TableTap](https://github.com/SujibShrestha/TableTap)
+QR-based restaurant ordering platform. Customers scan a table QR to browse menus, order, and pay. Orders sync live to the kitchen via WebSockets. Includes role-based dashboards for waiters, kitchen, cashiers, and admins with sales analytics.  
+`React` `Node.js` `PostgreSQL` `WebSockets`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### [AI Video Summary Assistant](https://github.com/SujibShrestha/video-agent)
+AI agent that processes long-form YouTube videos — transcribes, chunks, embeds, and lets you ask questions about the content using RAG. Built with LangChain, Chroma DB, and Groq AI.  
+`Python` `LangChain` `Chroma DB` `Groq AI` `Hugging Face`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## What I'm Currently Doing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# portfolio.me
+- Working on LLM pipelines, RAG systems, and prompt engineering
+- Learning system design and distributed systems
+
+---
+
+## Let's Connect
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sujib-shrestha-245868282/)
+[![X](https://img.shields.io/badge/X-black?style=for-the-badge&logo=x&logoColor=white)](https://x.com/sujibshrestha)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sujibshrestha78@gmail.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-00ea7b?style=for-the-badge&logo=vercel&logoColor=black)](https://www.sujibshrestha.com.np)

@@ -32,7 +32,7 @@ export default function Footer() {
 
           {/* Center */}
           <div>
-            <p className="text-sm text-gray-600">&copy; {currentYear} Built with Precision</p>
+            <p className="text-sm text-gray-600">&copy; {currentYear} Built with Nextjs and Tokens</p>
           </div>
 
           {/* Right */}

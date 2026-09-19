@@ -27,7 +27,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.sujibshrestha.com.np"),
   title: {
-    default: "Sujib Shrestha | Backend & Generative AI Developer",
+    default: "Sujib Shrestha",
     template: "%s | Sujib Shrestha",
   },
   description: "Portfolio of Sujib Shrestha, a Backend and Generative AI developer specializing in scalable API design, RAG pipelines, LLM fine-tuning, and full-stack applications with React & Next.js.",

@@ -6,7 +6,7 @@ export default function Skills() {
             category: "Backend",
             items: [
                 "ExpressJS",
-                "FastAPI",
+                "Django",
                 "SQL/NoSQL DB",
                 "PostgreSQL"
             ]
@@ -16,7 +16,6 @@ export default function Skills() {
             items: [
                 "RAG",
                 "LLM",
-                "Fine-Tuning",
                 "Vector DB",
                 "LangChain",
 

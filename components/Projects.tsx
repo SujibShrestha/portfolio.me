@@ -1,6 +1,7 @@
 "use client";
 
-import { MotionDiv } from "./MotionDiv"; 
+import { useState } from "react";
+import { MotionDiv } from "./MotionDiv";
 import Image from "next/image";
 import {
     Card,
@@ -10,7 +11,7 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
-import { GitFork, ExternalLink, ArrowRight } from "lucide-react";
+import { GitFork, ExternalLink, ArrowRight, X } from "lucide-react";
 
 interface Project {
     id: string;
@@ -28,23 +29,22 @@ interface Project {
 
 const projects: Project[] = [
     {
-        id: "PopcornList",
+        id: "TableTap",
         number: "01",
-        title: "Popcorn List",
+        title: "TableTap",
         description:
-            "A cinematic watchlist application (Popcorn List) that lets users discover, search, and manage movies with a sleek dashboard UI, integrated with TMDB API or custom database.",
-        image: "/screenshot/popcornlist.png",
-        tags: ["React.js", "Express.js", "PostgreSQL"],
-        githubUrl: "https://github.com/SujibShrestha/Movie-watchlist",
-        liveUrl: "https://movie-watchlist-py3q.vercel.app/",
-        problemSolved: "Users struggle to keep a unified record of movies they plan to watch or have watched. Popcorn List provides a centralized, real-time application to manage watchlists, browse details, and view viewing statistics seamlessly.",
+            "A QR-based restaurant ordering platform where customers scan a table QR to browse menus, order, and pay from their phone. Orders sync live to the kitchen via WebSockets with role-based dashboards for waiters, kitchen, cashiers, and admins.",
+        image: "/screenshot/tabletap.png",
+        tags: ["React.js", "Node.js", "PostgreSQL", "WebSockets"],
+        githubUrl: "https://github.com/SujibShrestha/TableTap",
+        problemSolved: "Traditional restaurant ordering relies on paper menus and manual order relay, causing delays and miscommunication. TableTap digitizes the entire flow — from menu browsing to kitchen alerts — reducing order-to-table time and eliminating middleman errors.",
         features: [
-            "Real-time TMDB API integration for up-to-date movie details",
-            "User watchlists with custom status tracking (To Watch, Watched)",
-            "Dynamic analytics dashboard visualizing watch time and genre breakdown",
-            "Responsive UI with instant client-side searching and filtering"
+            "Real-time order sync via WebSockets between customer, waiter, and kitchen",
+            "Role-based dashboards for waiters, kitchen staff, cashiers, and admins",
+            "QR code generation per table for instant menu access",
+            "Sales analytics and profit tracking for restaurant owners"
         ],
-        results: "Enabled users to organize watchlists in under 2 seconds and reduced search latency to less than 150ms through client-side caching.",
+        results: "60+ commits of active development. Full-stack system handling real-time bidirectional communication across 4 user roles.",
     },
     {
         id: "AI video summary assistant",
@@ -67,6 +67,8 @@ const projects: Project[] = [
 ];
 
 export default function Projects() {
+    const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
     return (
         <section id="projects" className="py-20 z-50 bg-[#0a0a0a] text-white">
             <div className="container mx-auto px-6 md:px-12 max-w-6xl">
@@ -83,6 +85,14 @@ export default function Projects() {
                         03 // SELECTED WORK
                     </span>
                     <div className="flex-1 h-px bg-white/10" />
+                    <a
+                        href="https://github.com/SujibShrestha?tab=repositories"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-mono text-[10px] text-gray-400 uppercase tracking-widest border border-white/10 px-3 py-1.5 hover:text-[#00ea7b] hover:border-[#00ea7b]/40 transition-all duration-200 shrink-0"
+                    >
+                        More Projects
+                    </a>
                 </MotionDiv>
 
                 {/* Project Cards Grid */}
@@ -95,7 +105,6 @@ export default function Projects() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.15 }}
                             className={
-                                /* Make the first card span full width on md+ */
                                 index === 0
                                     ? "md:col-span-2 lg:col-span-1"
                                     : ""
@@ -108,13 +117,10 @@ export default function Projects() {
                                         src={project.image}
                                         alt={`${project.title} - Full Stack Project Screenshot`}
                                         fill
-                                        className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                                        className="object-cover group-hover:scale-105 transition-all duration-500"
                                         sizes="(max-width: 768px) 100vw, 50vw"
                                     />
-                                    {/* Overlay gradient */}
                                     <div className="absolute inset-0 bg-linear-to-t from-[#111111]/80 via-transparent to-transparent" />
-
-                                    {/* Project number badge */}
                                     <div className="absolute top-4 left-4">
                                         <span className="font-mono text-xs text-[#00ea7b] bg-[#0a0a0a]/80 backdrop-blur-sm px-2 py-1 border border-[#00ea7b]/30">
                                             {project.number}
@@ -127,7 +133,6 @@ export default function Projects() {
                                         <CardTitle className="text-white font-bold text-lg leading-tight group-hover:text-[#00ea7b] transition-colors duration-300">
                                             {project.title}
                                         </CardTitle>
-                                        {/* Action links */}
                                         <div className="flex items-center gap-3 shrink-0 mt-1">
                                             {project.githubUrl && (
                                                 <a
@@ -159,43 +164,9 @@ export default function Projects() {
                                     <CardDescription className="text-gray-300 text-sm leading-relaxed">
                                         {project.description}
                                     </CardDescription>
-
-                                    {(project.problemSolved || project.features || project.results) && (
-                                        <details className="group/details mt-4 border-t border-white/5 pt-3">
-                                            <summary className="font-mono text-[10px] text-[#00ea7b] uppercase tracking-wider cursor-pointer list-none flex items-center justify-between hover:text-[#22c55e] transition-colors">
-                                                <span>View Case Study / SEO Details</span>
-                                                <span className="transition-transform duration-200 group-open/details:rotate-180">▼</span>
-                                            </summary>
-                                            <div className="mt-3 space-y-3 text-xs text-gray-400 leading-relaxed">
-                                                {project.problemSolved && (
-                                                    <div>
-                                                        <strong className="text-white block font-mono text-[9px] uppercase tracking-wide mb-1">Problem Solved:</strong>
-                                                        <p>{project.problemSolved}</p>
-                                                    </div>
-                                                )}
-                                                {project.features && (
-                                                    <div>
-                                                        <strong className="text-white block font-mono text-[9px] uppercase tracking-wide mb-1">Key Features:</strong>
-                                                        <ul className="list-disc pl-4 space-y-1">
-                                                            {project.features.map((feat, idx) => (
-                                                                <li key={idx}>{feat}</li>
-                                                            ))}
-                                                        </ul>
-                                                    </div>
-                                                )}
-                                                {project.results && (
-                                                    <div>
-                                                        <strong className="text-white block font-mono text-[9px] uppercase tracking-wide mb-1">Results:</strong>
-                                                        <p>{project.results}</p>
-                                                    </div>
-                                                )}
-                                            </div>
-                                        </details>
-                                    )}
                                 </CardContent>
 
                                 <CardFooter className="px-6 pb-6 pt-0 flex items-center justify-between">
-                                    {/* Tech tags */}
                                     <div className="flex flex-wrap gap-2">
                                         {project.tags.map((tag) => (
                                             <span
@@ -206,25 +177,95 @@ export default function Projects() {
                                             </span>
                                         ))}
                                     </div>
-
-                                    {/* View project link */}
-                                    {project.liveUrl && (
-                                        <a
-                                            href={project.liveUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex items-center gap-1 text-[10px] font-mono uppercase tracking-widest text-gray-400 hover:text-[#00ea7b] transition-colors duration-200 shrink-0 ml-4"
-                                        >
-                                            VIEW PROJECT
-                                            <ArrowRight size={12} />
-                                        </a>
-                                    )}
+                                    <button
+                                        onClick={() => setSelectedProject(project)}
+                                        className="flex items-center gap-1 text-[10px] font-mono uppercase tracking-widest text-gray-400 hover:text-[#00ea7b] transition-colors duration-200 shrink-0 ml-4"
+                                    >
+                                        VIEW DETAILS
+                                        <ArrowRight size={12} />
+                                    </button>
                                 </CardFooter>
                             </Card>
                         </MotionDiv>
                     ))}
                 </div>
             </div>
+
+            {/* Project Detail Modal */}
+            {selectedProject && (
+                <div
+                    className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+                    onClick={() => setSelectedProject(null)}
+                >
+                    {/* Backdrop */}
+                    <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
+                    {/* Modal */}
+                    <div
+                        className="relative bg-[#111111] border border-white/10 max-w-lg w-full max-h-[80vh] overflow-y-auto p-6 md:p-8"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* Close button */}
+                        <button
+                            onClick={() => setSelectedProject(null)}
+                            className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors"
+                            aria-label="Close"
+                        >
+                            <X size={20} />
+                        </button>
+
+                        {/* Modal content */}
+                        <span className="font-mono text-[10px] text-[#00ea7b] uppercase tracking-widest">
+                            {selectedProject.number} // {selectedProject.title}
+                        </span>
+
+                        <h3 className="text-white font-bold text-xl mt-3 mb-4">
+                            {selectedProject.title}
+                        </h3>
+
+                        <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                            {selectedProject.description}
+                        </p>
+
+                        {selectedProject.problemSolved && (
+                            <div className="mb-5">
+                                <strong className="text-white block font-mono text-[10px] uppercase tracking-wide mb-2">Problem Solved</strong>
+                                <p className="text-gray-400 text-sm leading-relaxed">{selectedProject.problemSolved}</p>
+                            </div>
+                        )}
+
+                        {selectedProject.features && (
+                            <div className="mb-5">
+                                <strong className="text-white block font-mono text-[10px] uppercase tracking-wide mb-2">Key Features</strong>
+                                <ul className="space-y-1.5">
+                                    {selectedProject.features.map((feat, idx) => (
+                                        <li key={idx} className="text-gray-400 text-sm leading-relaxed pl-4 relative before:content-[''] before:absolute before:left-0 before:top-2 before:w-1.5 before:h-px before:bg-[#00ea7b]">
+                                            {feat}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+
+                        {selectedProject.results && (
+                            <div className="mb-6">
+                                <strong className="text-white block font-mono text-[10px] uppercase tracking-wide mb-2">Results</strong>
+                                <p className="text-gray-400 text-sm leading-relaxed">{selectedProject.results}</p>
+                            </div>
+                        )}
+
+                        <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10">
+                            {selectedProject.tags.map((tag) => (
+                                <span
+                                    key={tag}
+                                    className="font-mono text-[10px] text-gray-400 uppercase tracking-wider border border-white/10 px-2 py-1 bg-white/5"
+                                >
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            )}
         </section>
     );
 }
