@@ -158,3 +158,96 @@
 .animate-float {
   animation: float 4s ease-in-out infinite;
 }
+
+/* --------------------------------------------------------------------------
+   Chat widget
+   -------------------------------------------------------------------------- */
+
+.chat-panel {
+  height: min(560px, calc(100vh - 8.5rem));
+}
+
+@supports (height: 100dvh) {
+  .chat-panel {
+    height: min(560px, calc(100dvh - 8.5rem));
+  }
+}
+
+/* Slim transcript scrollbar that never chains to the page behind it. */
+.chat-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.chat-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+}
+
+.chat-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Typing indicator dots */
+@keyframes chat-dot-bounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+
+  30% {
+    transform: translateY(-3px);
+    opacity: 1;
+  }
+}
+
+.chat-dot {
+  animation: chat-dot-bounce 1.2s ease-in-out infinite;
+}
+
+/* Blinking caret at the end of an answer while it streams in */
+@keyframes chat-caret {
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.chat-streaming > :last-child::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 0.95em;
+  margin-left: 3px;
+  vertical-align: -0.15em;
+  background: #00ea7b;
+  animation: chat-caret 1s steps(1, end) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chat-dot,
+  .chat-streaming > :last-child::after {
+    animation: none;
+  }
+
+  .chat-panel {
+    transition-duration: 1ms;
+  }
+}

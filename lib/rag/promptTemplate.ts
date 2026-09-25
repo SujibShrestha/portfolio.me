@@ -1,29 +1,30 @@
-import { ragConfig } from "./config";
 import type { RetrievedChunk } from "./types";
 
+/**
+ * Builds the user message for the LLM.
+ *
+ * The system prompt is sent separately (see `generateAnswerStream`), so it is
+ * intentionally not repeated here. Context chunks are passed anonymously —
+ * no "[Source N]" labels — so the model never has source numbering available
+ * to parrot back in its answer.
+ */
 export function buildPrompt(question: string, chunks: RetrievedChunk[]): string {
   if (chunks.length === 0) {
-    return `${ragConfig.systemPrompt}
-
-No relevant context was found in the knowledge base for this question.
+    return `No relevant context was found for this question.
 Politely tell the user you don't have information about that, and don't guess.
 
 Question: ${question}`;
   }
 
   const contextBlock = chunks
-    .map((chunk, i) => {
-      const label = chunk.metadata.title ?? chunk.sourceDocId;
-      return `[Source ${i + 1}: ${label}]\n${chunk.content}`;
-    })
+    .map((chunk) => chunk.content.trim())
+    .filter(Boolean)
     .join("\n\n---\n\n");
 
-  return `${ragConfig.systemPrompt}
-
-Context:
+  return `Context:
 ${contextBlock}
 
 Question: ${question}
 
-Answer using only the context above. When you use information from a source, mention which source it came from (e.g. "According to Source 2...").`;
+Answer the question directly using only the context above. Do not mention sources, citations, retrieval, or that a context was provided.`;
 }

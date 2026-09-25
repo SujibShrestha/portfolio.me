@@ -6,7 +6,7 @@ export default function Skills() {
             category: "Backend",
             items: [
                 "ExpressJS",
-                "Django",
+                "FastAPI",
                 "SQL/NoSQL DB",
                 "PostgreSQL"
             ]
